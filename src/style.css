@@ -1,0 +1,173 @@
+:root {
+    --main-bg-color: rgb(236,194,135);
+    --text-color: rgb(117,56,0);
+    --button-color: rgb(218, 108, 23);
+}
+
+* {
+    margin:0;
+    padding:0;
+}
+
+html {
+    overflow: hidden;
+    width: 100vw;
+    height: 100%;  /*was 100vh but in mobile device has overflow*/
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: var(--main-bg-color);
+}
+
+body a {
+    color:black;
+    text-decoration: none;
+}
+
+.container {
+    z-index: -1;
+    position: absolute;
+    width:100vw;
+    height:100%;  /*was 100vh but in mobile device has overflow*/
+    overflow: hidden;
+}
+
+.container h1, h2, h4, p, label, textarea::placeholder, ::placeholder{
+    margin: clamp(20px, 4vw, 45px);
+    line-height: 1.6rem;
+    color: var(--text-color);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.content h1{
+    line-height: 3rem;
+    font-size: calc(12px + 1.2vw);
+}
+
+.content p, textarea::placeholder, input::placeholder{
+    font-size: calc(4px + .7vw);
+}
+
+.content{
+    position: relative;
+    width: 60%;
+    margin-top: clamp(150px,18vw, 300px);
+    margin-left: 5vw;
+    max-width: 900px;
+    min-width: 400px;
+    pointer-events: none;
+}
+
+.background{
+    position:absolute;
+    z-index: -1;
+    bottom: 0;
+}
+
+.navi{
+    position:absolute;
+    top: 0;
+    left: 5vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navi object{
+    width: 40%;
+    position: absolute; 
+    top: 0;
+    left: min(-12vw,-8vh);
+    z-index: -1;
+    pointer-events: none;
+}
+
+.navi h2{
+    font-size: calc(6px + 1vw);
+    margin: 0;
+}
+
+.underline{
+    z-index: 1;
+    margin: clamp(20px, 4vw, 45px);
+}
+
+.underline::after {
+    content: '';
+    width: 0px;
+    height: calc(0.8px + 0.1vw);
+    display: block;
+    background: var(--text-color);
+    transition: 300ms;
+}
+  
+.underline:hover::after {
+    width: 100%;
+}
+
+
+.rabbit{
+    position:absolute;
+    width: 72%;
+    right: -8vw;
+    bottom: -2vw;
+    min-width: 500px;
+}
+
+
+/*back button*/
+.back {
+    z-index: 2;
+    cursor: pointer;
+    position: absolute;
+    width: 20%;
+    height: 8.7%;
+    background-color: rgba(140, 62, 62, 0);
+}
+
+.back a{
+    display: flex;
+    flex-direction: row;
+    margin-top:3.2vh;  
+}
+
+.back_sign {
+    position:relative;
+    pointer-events: none;
+    left: 2vw;
+    width: calc(10px + 1vw);
+}
+
+.home {
+    position: relative;
+    margin: 0 0 0 3vw;
+}
+
+.home h2{
+    font-size: calc(6px + 1vw);
+    margin: 0;
+}
+
+/*Scroll Bar*/
+/* width */
+::-webkit-scrollbar {
+    width: 6px;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgb(186, 186, 186); 
+    background-clip: padding-box;
+}
+
+
+/*.header{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.header div{
+    cursor: pointer;
+}*/

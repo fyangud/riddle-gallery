@@ -1,0 +1,195 @@
+/*for riddle submit page*/
+.container{
+    overflow-y: auto;
+}
+
+.form{
+    position: relative;
+    width: 100%;
+    top: 10%;
+    height: 80%;
+    margin: auto;
+    min-height: 400px;
+    max-height: 1000px;
+    background-color: rgb(255,244,238);
+    display: flex;
+    flex-direction: row;
+}
+
+.form h2, p{
+    text-align: center;
+    margin: 1.5rem;
+}
+
+.lantern_slider, .form_right{
+    width: 50%;
+    height: 80%;
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /*margin-top: 10%;*/
+}
+
+.form_right{
+    border-radius: .5rem;
+}
+
+.lantern_slider{
+    overflow: hidden;
+}
+
+.form_success{
+    position:absolute;
+    width: 70%;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+}
+
+label {
+    display: block;
+    margin: 0;
+}
+
+input, textarea{
+  margin: 0;
+  width: 100%;
+  min-height: 2em;
+  resize: none;
+}
+
+.submit_btn{
+    cursor: pointer;
+    display: block;
+    width: 50%;
+    margin: 2rem auto 0 auto;
+    height: 1.5rem;
+    font-size: 1.1rem;
+    background-color: var(--button-color);
+    border: 0px;
+    border-radius: 2px;
+    padding: 0.5rem;
+    color: white;
+    min-width: 200px;
+    text-align: center;
+    text-decoration: none;
+}
+
+
+.image_slider {
+    width: 600%;
+    height: 60%;
+    display: flex;
+}
+
+.lantern_offset{
+    margin: 0 auto；
+}
+
+/* We have to set display: none;
+  If not, all of our images would 
+  be visible at the same time */
+.image_slider input {
+    display: none;
+}
+
+.slide {
+    position: relative;
+    width: 16.67%;
+    transition: 1s;
+    display: flex;
+    justify-content: center;
+}
+
+.slide img {
+    max-height: 300px;
+    margin: auto;
+}
+
+.slide img:hover~.lantern_explain{
+    visibility:visible;
+}
+
+.lantern_explain{
+    position:absolute;
+    visibility: hidden;
+    max-width: 200px;
+    max-height:300px;
+    overflow-y: auto;
+    top: 90%;
+    background-color: rgba(255,255,255,0.75);
+}
+
+.lantern_explain p{
+    margin: 0.5rem;
+}
+
+/* css for slide navigation */
+.navigation {
+    display: flex;
+    justify-content: center;
+    margin: 2rem auto 0 auto;
+}
+
+.navigation_btn {
+    border: 2px solid var(--button-color);
+    padding: 8px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.navigation_btn:not(:last-child) {
+    margin-right: 2.5rem;
+}
+
+.navigation_btn:hover {
+    background: var(--button-color);
+}
+
+/* The checked attribute is used with
+reference to <input type="radio">, 
+when radio button is clicked the 
+class will shift w.r.t  left margin 
+as mentioned which results in image 
+slider */
+#lantern_1:checked~.first {
+    margin-left: 0;
+}
+
+#lantern_2:checked~.first {
+    margin-left: -16.67%;
+}
+
+#lantern_3:checked~.first {
+    margin-left: -33.33%;
+}
+
+#lantern_4:checked~.first {
+    margin-left: -50%;
+}
+
+#lantern_5:checked~.first {
+    margin-left: -66.67%;
+}
+
+#lantern_6:checked~.first {
+    margin-left: -83.33%;
+}
+
+/*for smaller screens*/
+@media (max-width: 730px) {
+    .form {
+        height: auto;
+        flex-direction: column;
+    }
+
+    .lantern_slider{
+        width: auto;
+    }
+
+    .form_right{
+        width: auto;
+    }
+}
